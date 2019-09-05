@@ -2,63 +2,84 @@
 const dataPokemon=POKEMON.pokemon;
 
 //declaro variables boton catálogo
-const opcioncatalogo= document.getElementById("btncatalogo");
+const opcionCatalogo= document.getElementById("btnCatalogo");
 //declaro constante boton versus
-const opcionfiltro= document.getElementById("btnfiltro");
+const opcionFiltro= document.getElementById("btnFiltro");
 
-//Evento opcioncatalogo que es el btncatalogo
-opcioncatalogo.addEventListener("click", ()=>{
+//Evento opcionCatalogo que es el btncatalogo
+opcionCatalogo.addEventListener("click", ()=>{
     //Muestro catálogo
-    document.getElementById("muestracatalogo").style.display = 'block';
+    document.getElementById("muestraCatalogo").style.display = 'block';
     //Oculto versus
-    document.getElementById("muestrafiltro").style.display = "none";
+    document.getElementById("muestraFiltro").style.display = "none";
     //Recorro data para luego imprimir en contenedorpokemon
     for (let i=0; i<dataPokemon.length;i++){
         //Declaro espacio que ocupará la impresión
-        const espaciocatalogo=document.createElement("section");
+        const espacioCatalogo=document.createElement("div");
         //declarar clase a la seccion para conectar con CSS
-        //espaciocatalogo.className="Nombrecito";
+        //espacioCatalogo.className="Nombrecito";
         //declaramos id para ser utilizado en el futuro (¿?)
-        //espaciocatalogo.id="vercatalogo";
+        //espacioCatalogo.id="vercatalogo";
         //declaramos espacio donde se imprimirá la data de num
-        const espacionum=document.createElement("h3");
+        const espacioNum=document.createElement("h3");
         //le asignamos el contenido al espacio, especificamente el valor del objeto
-        espacionum.textContent=(dataPokemon[i].num);
+        espacioNum.textContent=(dataPokemon[i].num);
 
         //declaramos espacio donde se imprimirá la data de name
-        const espaciononame=document.createElement("h4");
-        espaciononame.textContent=(dataPokemon[i].name);
+        const espacionoName=document.createElement("h4");
+        espacionoName.textContent=(dataPokemon[i].name);
 
         //declaramos espacio donde imprimirá la data img
-        const espacioimg=document.createElement("img");
-        espacioimg.src=(dataPokemon[i].img);
+        const espacioImg=document.createElement("img");
+        espacioImg.src=(dataPokemon[i].img);
 
-        //asignamos al padre espaciocatalogo el hijo correspondiente
-        espaciocatalogo.appendChild(espacioimg);
-        espaciocatalogo.appendChild(espacionum);
-        espaciocatalogo.appendChild(espaciononame);
+        //intento espacioCatalogo/modal
+        const btnModal=document.createElement("button");
+        btnModal.textContent=("Ver más");
+
+        const espacioModal=document.createElement("div");
+
+        const espacioButton=document.createElement("span");
+        espacioButton.className="cerrar";
+        espacioButton.textContent=("Cerrar");
+
+        espacioButton.addEventListener("click", ()=>{
+        espacioModal.style.display="none";
+        });
+
+        btnModal.addEventListener("click", ()=>{
+
+            const espacioHeight=document.createElement("p");
+            espacioHeight.textContent=(dataPokemon[i].height);
+
+            const espacioWeight=document.createElement("p");
+            espacioWeight.textContent=(dataPokemon[i].weight);
+            
+            espacioModal.appendChild(espacioHeight);
+            espacioModal.appendChild(espacioWeight);
+            espacioCatalogo.appendChild(espacioModal);
+
+            espacioModal.appendChild(espacioButton);
+
+        });
+
+
+        //asignamos al padre espacioCatalogo el hijo correspondiente
+        espacioCatalogo.appendChild(espacioImg);
+        espacioCatalogo.appendChild(espacioNum);
+        espacioCatalogo.appendChild(espacionoName);
+        espacioCatalogo.appendChild(btnModal);
+        //espacioCatalogo.appendChild(espaciotype);
 
         //llevamos al padre/div raizcatalogo de HTML el hijo/section de JS
-        document.getElementById("raizcatalogo").appendChild(espaciocatalogo).innerHTML;
+        document.getElementById("raizCatalogo").appendChild(espacioCatalogo).innerHTML;
     }
 });
 
-opcionfiltro.addEventListener("click", ()=>{
-    document.getElementById('muestrafiltro').style.display = 'block';
-    document.getElementById("muestracatalogo").style.display = "none";
-    muestrafiltro.innerHTML= "<p>Aquí irán los filtros</p>";
+opcionFiltro.addEventListener("click", ()=>{
+    document.getElementById('muestraFiltro').style.display = 'block';
+    document.getElementById("muestraCatalogo").style.display = "none";
+    muestraFiltro.innerHTML= "<p>Aquí irán los filtros</p>";
 });
 
-//ejemplo marcia
-const btnShow= document.getElementById("show");
-btnShow.addEventListener("click", () =>{
-    let nameUser=document.getElementById("name").value;
-    //console.log(nameUser);
-    for(let i=0;i<nameUser.length;i++){
-        //console.log(nameUser[i]);
-        const li= document.createElement("li");
-        let textli=document.createTextNode(nameUser[i]);
-        li.appendChild(textli);
-        container.innerHTML+=`<li>${nameUser[i]}</li>`;
-    }
-})
+
