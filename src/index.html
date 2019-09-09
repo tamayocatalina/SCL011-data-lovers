@@ -2,6 +2,7 @@
 <html lang="es" xml:lang="es">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -9,11 +10,9 @@
     <div id="root"></div>
     
     <header>
-      <nav>
-        <ul>
-          <button id="btnCatalogo">Catálogo</button>
-          <button id="btnFiltro">Filtros</button>
-        </ul>
+      <nav class="menuNavegacion">
+          <button id="btnCatalogo" class="btnNav">CATÁLOGO</button>
+          <button id="btnBusqueda" class="btnNav">BÚSQUEDA</button>
       </nav>
     </header>
 
@@ -21,7 +20,7 @@
       <article id="muestraCatalogo">
         <div id="raizCatalogo"></div>
       </article>
-      <article id="muestraFiltro"></article>
+      <article id="muestraBusqueda"></article>
     </main>
 
     <script src="./data/pokemon/pokemon.js"></script>

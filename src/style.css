@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    background-color: #001623;
+}
+
+.menuNavegacion{
+    padding: 1em 2em;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.btnNav{
+    color: #001623;
+    background: #ffcb05;
+    border: 1px solid #ffcb05;
+    border-radius: 28px;
+    padding: 2px 15px;
+}
+
+.btnNav:hover{
+    background: transparent;
+    color: #fefefe;
+}
+
+#muestraCatalogo{
+    width: 100%;
+    float: left;
+    display: flex;
+}
+
+.espacioCatalogo{
+    float: left;
+    background: #fefefe;
+    width: 15%;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 28px;
+    box-sizing: border-box;
+    margin: 1em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    font-size: 12px;
+}
+
+.estiloVerMas{
+    color: #fefefe;
+    background: #001623;
+    border: 1px solid #001623;
+    border-radius: 28px;
+    padding: 2px 15px;
+}
+
+.estiloVerMas:hover{
+    color: #001623;
+    background: transparent;
+}
+
+.espacioModal{
+    position: fixed; /* La misma posición */
+    z-index: 1; /*Cuando varios elementos se superponen, determina cuales cubren a otros */
+    padding: 10em 2em 2em 2em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.733);
+}
+
+.estiloModal{
+    color:#001623;
+}
+
+.estiloCerrar{
+    color: #001623;
+    background: transparent;
+    border: 2px solid #001623;
+    border-radius: 28px;
+    padding: 2px 15px;
+}
+
+.estiloCerrar:hover{
+    background: #001623;
+    color: #fefefe;
+}
+
+@media (max-width: 480px) {}
+    
+@media (min-width 481px) and (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 1199px) {}
