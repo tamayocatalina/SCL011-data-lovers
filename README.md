@@ -26,6 +26,9 @@ Como primer acercamiento al usuario, se realizó una encuesta abierta a todos lo
 *A continuación algunas imágenes donde se compartió la encuesta *
 <a href="https://ibb.co/WzHpg3b"><img src="https://i.ibb.co/FYhqgWS/1212-01.jpg" alt="1212-01" border="0"></a>
 
+*Resultados encuesta*
+<a href="https://ibb.co/JBmsf3B"><img src="https://i.ibb.co/w0Bz9c0/encuestas-1-02.jpg" alt="encuestas-1-02" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'>subir foto</a><br />
+
 ### Definición usuario 
 
 -prototipo de usuario, bio, frustraciones, objetivos, necesidades
