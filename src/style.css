@@ -13,12 +13,12 @@ body{
     margin: 20px auto;
 }
 
-.menuNavegacion{
+.navigationMenu{
     width: 100%;
     text-align: center;
 }
 
-.btnNav{
+.navBtn{
     color: #001623;
     background: #ffcb05;
     border: 2px solid #ffcb05;
@@ -28,13 +28,13 @@ body{
     font-size: 16px;
 }
 
-.btnNav:hover{
+.navBtn:hover{
     background: transparent;
     color: #fefefe;
     font-weight: 500;
 }
 
-.catalogo{
+.catalogue{
     background: #fef4f4;
     border-radius: 25px;
     margin: 30px 30px auto;
@@ -45,7 +45,7 @@ body{
     grid-template-rows: repeat(3,1fr);
 }
 
-.espacioCatalogo{
+.catalogueSpace{
     box-sizing: border-box;
     width: 100%;
     box-shadow: -3px 0px 54px -20px rgba(0,0,0,0.54);
@@ -61,22 +61,22 @@ body{
     grid-template-rows: (4,1fr);
 }
 
-.espacioCatalogo > .espacioImg{
+.catalogueSpace > .imgSpace{
     grid-column: 1;
     grid-row: 1;
 }
 
-.espacioCatalogo > .espacioNum{
+.catalogueSpace > .numSpace{
     grid-column: 1;
     grid-row: 2;
 }
 
-.espacioCatalogo > .espacioName{
+.catalogueSpace > .nameSpace{
     grid-column: 1;
     grid-row: 3;
 }
 
-.espacioCatalogo > .estiloVerMas{
+.catalogueSpace > .seeMoreStyle{
     color: #fefefe;
     background: #001623;
     border: 1px solid #001623;
@@ -86,12 +86,12 @@ body{
     grid-row: 4;
 }
 
-.estiloVerMas:hover{
+.seeMoreStyle:hover{
     color: #001623;
     background: transparent;
 }
 
-.espacioModal{
+.modalSpace{
     position: fixed; /* La misma posición */
     z-index: 1; /*Cuando varios elementos se superponen, determina cuales cubren a otros */
     padding: 10px 10px;
@@ -103,13 +103,13 @@ body{
     background-color: #fefefe;
 }
 
-.estiloModal{
+.modalStyle{
     color: #001623;
     font-size: 18px;
     font-weight: 300;
 }
 
-.estiloCerrar{
+.closeStyle{
     color: #001623;
     background: transparent;
     border: 2px solid #001623;
@@ -117,50 +117,50 @@ body{
     padding: 2px 15px;
 }
 
-.estiloCerrar:hover{
+.closeStyle:hover{
     background: #001623;
     color: #fefefe;
 }
 
 @media (max-width: 640px) {
-    .catalogo{
+    .catalogue{
         grid-template-columns: repeat(1,1fr);
     }
 
-    .btnNav{
+    .navBtn{
         font-size: 11px;
     }
 
 }
     
 @media (min-width: 640px) and (max-width: 1024px) {
-    .catalogo{
+    .catalogue{
         grid-template-columns: repeat(2,1fr);
     }
 
-    .btnNav{
+    .navBtn{
         font-size: 13px;
     }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px){
 
-    .catalogo{
+    .catalogue{
         grid-template-columns: repeat(4,1fr);
     }
 
-    .btnNav{
+    .navBtn{
         font-size: 15px;
     }
 }
 
 @media (min-width: 1200px) {
 
-    .catalogo{
+    .catalogue{
         grid-template-columns: repeat(5,1fr);
     }
 
-    .btnNav{
+    .navBtn{
         font-size: 16px;
     }
 }
