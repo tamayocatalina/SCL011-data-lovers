@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
 body{
-    margin: 0;
     background-color: #001623;
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald"; 
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
 .menuNavegacion{
-    padding: 1em 2em;
-    float: left;
     width: 100%;
     text-align: center;
 }
@@ -13,42 +21,69 @@ body{
 .btnNav{
     color: #001623;
     background: #ffcb05;
-    border: 1px solid #ffcb05;
-    border-radius: 28px;
-    padding: 2px 15px;
+    border: 2px solid #ffcb05;
+    border-radius: 15px;
+    padding: 8px 15px;
+    margin: 10px 25px;
+    font-size: 16px;
 }
 
 .btnNav:hover{
     background: transparent;
     color: #fefefe;
+    font-weight: 500;
 }
 
-#muestraCatalogo{
-    width: 100%;
-    float: left;
-    display: flex;
+.catalogo{
+    background: #fef4f4;
+    border-radius: 25px;
+    margin: 30px 30px auto;
+    padding: 20px 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
 
 .espacioCatalogo{
-    float: left;
-    background: #fefefe;
-    width: 15%;
-    border: 1px solid;
-    text-align: center;
-    border-radius: 28px;
     box-sizing: border-box;
-    margin: 1em;
-    padding-top: 1em;
-    padding-bottom: 2em;
-    font-size: 12px;
+    width: 100%;
+    box-shadow: -3px 0px 54px -20px rgba(0,0,0,0.54);
+    border-radius: 25px;
+    margin: 5px 5px auto;
+    padding: 15px 15px;
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: (1,1fr);
+    grid-template-rows: (4,1fr);
 }
 
-.estiloVerMas{
+.espacioCatalogo > .espacioImg{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.espacioCatalogo > .espacioNum{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.espacioCatalogo > .espacioName{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.espacioCatalogo > .estiloVerMas{
     color: #fefefe;
     background: #001623;
     border: 1px solid #001623;
-    border-radius: 28px;
-    padding: 2px 15px;
+    border-radius: 25px;
+    padding: 5px 5px;
+    grid-column: 1;
+    grid-row: 4;
 }
 
 .estiloVerMas:hover{
@@ -59,16 +94,19 @@ body{
 .espacioModal{
     position: fixed; /* La misma posición */
     z-index: 1; /*Cuando varios elementos se superponen, determina cuales cubren a otros */
-    padding: 10em 2em 2em 2em;
+    padding: 10px 10px;
+    margin: 20px 20px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.733);
+    background-color: #fefefe;
 }
 
 .estiloModal{
-    color:#001623;
+    color: #001623;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .estiloCerrar{
@@ -84,8 +122,45 @@ body{
     color: #fefefe;
 }
 
-@media (max-width: 480px) {}
-    
-@media (min-width 481px) and (max-width: 767px) {}
+@media (max-width: 640px) {
+    .catalogo{
+        grid-template-columns: repeat(1,1fr);
+    }
 
-@media (min-width: 768px) and (max-width: 1199px) {}
+    .btnNav{
+        font-size: 11px;
+    }
+
+}
+    
+@media (min-width: 640px) and (max-width: 1024px) {
+    .catalogo{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .btnNav{
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px){
+
+    .catalogo{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .btnNav{
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .catalogo{
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    .btnNav{
+        font-size: 16px;
+    }
+}
