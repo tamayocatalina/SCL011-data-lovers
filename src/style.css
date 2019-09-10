@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
 body{
@@ -164,3 +165,25 @@ body{
         font-size: 16px;
     }
 }
+
+#menuFiltrar {
+    width: 200px; 
+  }
+  
+  #menuFiltrar a {
+    background-color: #eee; 
+    color: black; 
+    display: block; 
+    padding: 12px;
+    text-decoration: none; 
+  }
+  
+  #menuFiltrara:hover {
+    background-color: #ccc; 
+  }
+  
+  #menuFiltrar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+    
