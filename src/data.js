@@ -29,4 +29,3 @@ const filterByType = (dataPokemon, valueFilter) => {
 //terminada la funcion declararla global:
 //window.filterByType=filterByType , de esta forma desde cualquier ventana
 //accedemos a la funcion filterByType de modo: window.filterByType
-

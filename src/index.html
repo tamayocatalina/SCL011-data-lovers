@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es">
-  
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>filtrar</h1>
-    <div id = "selectFilterGrande">
+   <div id="root"></div>
+    <div class="container">
+    <header>
+      <nav class="navigationMenu">
+          <button id="catalogueBtn" class="navBtn">CATÁLOGO</button>
+          <button id="searchBtn" class="navBtn">BÚSQUEDA</button>
+      </nav>
+    </header>
+
+    <main>
+      <article id="showCatalogue">
+        <div id="catalogueRoot"></div>
+      </article>
+      <article id="showSearch">
+        <div id = "selectFilterGrande">
       <select id= "valueFilter" >
           <option value = "Fire">Fuego</option> 
           <option value = "Ice">Hielo</option> 
@@ -28,6 +41,7 @@
           </select>
   
         </div>
+<<<<<<< HEAD
     <div id="root"></div>
 
 
@@ -38,6 +52,12 @@
     
   
 
+=======
+      </article>
+      
+    </main>
+    </div>
+>>>>>>> eed92a12f67db31f6d3f1408571eb2282e1182a2
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
