@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
 body{
@@ -14,9 +13,32 @@ body{
     margin: 20px auto;
 }
 
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.start{
+    background: transparent;
+    background-image: url(../img/logo-1.png);
+    background-size: cover;
+    width: auto;
+    padding: 150px 250px;
+    background-position: center;
+    border: none;
+    margin: 10px;
+}
+
 .navigationMenu{
     width: 100%;
     text-align: center;
+    margin: 10px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .navBtn{
@@ -27,16 +49,18 @@ body{
     padding: 8px 15px;
     margin: 10px 25px;
     font-size: 16px;
+    justify-content: center;
+    font-weight: 300;
 }
 
 .navBtn:hover{
     background: transparent;
     color: #fefefe;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-.catalogue{
-    background: #fef4f4;
+.catalogue, .search{
+    background: #fefefe;
     border-radius: 25px;
     margin: 30px 30px auto;
     padding: 20px 20px;
@@ -46,7 +70,7 @@ body{
     grid-template-rows: repeat(3,1fr);
 }
 
-.catalogueSpace{
+.catalogueSpace, .pokemonSpace{
     box-sizing: border-box;
     width: 100%;
     box-shadow: -3px 0px 54px -20px rgba(0,0,0,0.54);
@@ -62,22 +86,22 @@ body{
     grid-template-rows: (4,1fr);
 }
 
-.catalogueSpace > .imgSpace{
+.imgSpace{
     grid-column: 1;
     grid-row: 1;
 }
 
-.catalogueSpace > .numSpace{
+.numSpace{
     grid-column: 1;
     grid-row: 2;
 }
 
-.catalogueSpace > .nameSpace{
+.nameSpace{
     grid-column: 1;
     grid-row: 3;
 }
 
-.catalogueSpace > .seeMoreStyle{
+.seeMoreStyle{
     color: #fefefe;
     background: #001623;
     border: 1px solid #001623;
@@ -95,13 +119,30 @@ body{
 .modalSpace{
     position: fixed; /* La misma posición */
     z-index: 1; /*Cuando varios elementos se superponen, determina cuales cubren a otros */
-    padding: 10px 10px;
-    margin: 20px 20px;
+    padding: 0;
+    margin: 0;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #fefefe;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.characterItems{
+   background: #fefefe;
+   width: 20%;
+   height: 60%;
+   padding: 2%;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   border-radius: 15%;
 }
 
 .modalStyle{
@@ -123,19 +164,25 @@ body{
     color: #fefefe;
 }
 
+.navigationSearch {
+    background: #fefefe;
+    border-radius: 25px;
+    margin: 30px 30px auto;
+    padding: 20px 20px;
+}
+
 @media (max-width: 640px) {
-    .catalogue{
+    .catalogue, .search{
         grid-template-columns: repeat(1,1fr);
     }
 
     .navBtn{
         font-size: 11px;
     }
-
 }
     
 @media (min-width: 640px) and (max-width: 1024px) {
-    .catalogue{
+    .catalogue, .search{
         grid-template-columns: repeat(2,1fr);
     }
 
@@ -145,8 +192,7 @@ body{
 }
 
 @media (min-width: 1024px) and (max-width: 1200px){
-
-    .catalogue{
+    .catalogue, .search{
         grid-template-columns: repeat(4,1fr);
     }
 
@@ -156,8 +202,7 @@ body{
 }
 
 @media (min-width: 1200px) {
-
-    .catalogue{
+    .catalogue, .search{
         grid-template-columns: repeat(5,1fr);
     }
 
@@ -165,25 +210,3 @@ body{
         font-size: 16px;
     }
 }
-
-#menuFiltrar {
-    width: 200px; 
-  }
-  
-  #menuFiltrar a {
-    background-color: #eee; 
-    color: black; 
-    display: block; 
-    padding: 12px;
-    text-decoration: none; 
-  }
-  
-  #menuFiltrara:hover {
-    background-color: #ccc; 
-  }
-  
-  #menuFiltrar a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-    
