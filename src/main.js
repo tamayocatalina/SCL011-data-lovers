@@ -1,108 +1,160 @@
-//declaro como variable la data POKEMON, y el array pokemon
-const dataPokemon=window.POKEMON.pokemon;
+//Declaramos constante POKEMON de la data
+const pokemonList=window.POKEMON.pokemon;
 
-//declaro variables boton catálogo
-const catalogueOption= document.getElementById("catalogueBtn");
-//declaro constante boton versus
-const cataloqueSearch= document.getElementById("searchBtn");
+//Ocultamos select del filtrado
+document.getElementById("filterValue").style.display= "none";
 
-//Evento catalogueOption que es el catalogueBtn
+//Declaramos botones de navegacion catálogo y búsqueda
+const catalogueOption=document.getElementById("catalogueBtn");
+const catalogueSearch=document.getElementById("searchBtn");
+
+//Evento botón catálogo MOSTRAR
 catalogueOption.addEventListener("click", ()=>{
-    //Declaro espacio que ocupará la impresión de las tarjetas
+    
+    //Creamos div contenedor del catálogo y le asignamos una clase
     const catalogue=document.createElement("div");
     catalogue.className="catalogue";
 
-    //Muestro catálogo
+    //Se muestra catálogo, se oculta búsqueda
     document.getElementById("showCatalogue").style.display = 'block';
-    //Oculto versus
     document.getElementById("showSearch").style.display = "none";
-    //Recorro data para luego imprimir en contenedorpokemon
+
+    //Se recorre la data
     for (let i=0; i<dataPokemon.length;i++){
 
-        //Declaro espacio de las tarjetas
+        //Declaro espacios para imprimir ficha y características, asignamos clases
         const catalogueSpace=document.createElement("div");
-        //declarar clase a la seccion para conectar con CSS
         catalogueSpace.className="catalogueSpace";
-        //para declarar id se utiliza
         //catalogueSpace.id="vercatalogo";
 
-        //declaramos espacio donde se imprimirá la data de num
         let numSpace=document.createElement("h3");
-        //le asignamos el contenido al espacio, especificamente el num del objeto
-        numSpace.textContent=(dataPokemon[i].num);
-        //declaramos clase de la sección num
         numSpace.className="numSpace";
-
-        //declaramos espacio donde se imprimirá la data de name
+        numSpace.textContent=(dataPokemon[i].num);
+        
         let nameSpace=document.createElement("h4");
-        nameSpace.textContent=(dataPokemon[i].name);
         nameSpace.className="nameSpace";
+        nameSpace.textContent=(dataPokemon[i].name);
 
-        //declaramos espacio donde imprimirá la data img
         let imgSpace=document.createElement("img");
-        imgSpace.src=(dataPokemon[i].img);
         imgSpace.className="imgSpace";
-
-        //Modal
+        imgSpace.src=(dataPokemon[i].img);
+        
+        //Declaramos botón del modal
         const modalBtn=document.createElement("button");
-        modalBtn.textContent=("Ver +");
         modalBtn.className="seeMoreStyle";
-
+        modalBtn.textContent=("Ver +");
+        
+        //Evento botón del modal
         modalBtn.addEventListener("click", ()=>{
-            //espacio contenedor del modal
+
             const modalSpace=document.createElement("div");
             modalSpace.className="modalSpace";
 
             let modalNameSpace=document.createElement("h4");
-            modalNameSpace.textContent=(dataPokemon[i].name);
             modalNameSpace.className="modalStyle";
-
+            modalNameSpace.textContent=(dataPokemon[i].name);
+            
             let modalImgSpace=document.createElement("img");
-            modalImgSpace.src=(dataPokemon[i].img);
             modalImgSpace.className="modalStyle";
+            modalImgSpace.src=(dataPokemon[i].img);
 
             let modalHeightSpace=document.createElement("p");
-            modalHeightSpace.textContent=(dataPokemon[i].height);
             modalHeightSpace.className="modalStyle";
+            modalHeightSpace.textContent=(dataPokemon[i].height);
 
             let modalWeightSpace=document.createElement("p");
-            modalWeightSpace.textContent=(dataPokemon[i].weight);
             modalWeightSpace.className="modalStyle";
+            modalWeightSpace.textContent=(dataPokemon[i].weight);
 
             const buttonSpace=document.createElement("span");
             buttonSpace.className="closeStyle";
             buttonSpace.textContent=("X");
+
+            //Evento botón cerrar modal
+            buttonSpace.addEventListener("click", ()=>{
+                modalSpace.style.display="none";
+                });
             
+            //Asignamos padre a los elementos creados
             modalSpace.appendChild(modalNameSpace);
             modalSpace.appendChild(modalImgSpace);
             modalSpace.appendChild(modalHeightSpace);
             modalSpace.appendChild(modalWeightSpace);
-            catalogueSpace.appendChild(modalSpace);
-
             modalSpace.appendChild(buttonSpace);
-
-            buttonSpace.addEventListener("click", ()=>{
-                modalSpace.style.display="none";
-                });
-
+            catalogueSpace.appendChild(modalSpace);
         });
 
-        //asignamos al padre catalogueSpace el hijo correspondiente
+        //Asignamos padre a los elementos creados
         catalogueSpace.appendChild(imgSpace);
         catalogueSpace.appendChild(numSpace);
         catalogueSpace.appendChild(nameSpace);
         catalogueSpace.appendChild(modalBtn);
         catalogue.appendChild(catalogueSpace);
 
-        //llevamos al padre/div raizcatalogo de HTML el hijo/section de JS
+        //Imprimimos el abuelo en la raiz
         document.getElementById("catalogueRoot").appendChild(catalogue).innerHTML;
     }
-});
+});//Fin botón catálogo
 
-cataloqueSearch.addEventListener("click", ()=>{
-    document.getElementById('showSearch').style.display = 'block';
+//Evento botón búsqueda FILTRAR
+catalogueSearch.addEventListener("click", ()=>{
+
+    //Se muestra búsqueda y selectfiltergrande, se oculta catálogo
     document.getElementById("showCatalogue").style.display = "none";
-    showSearch.innerHTML= "<p>Aquí irán los filtros</p>";
-});
+    document.getElementById('showSearch').style.display = "block";
+    document.getElementById("filterValue").style.display= "block";
 
+    //Se declara constante y función del select 
+    const selectValue=document.getElementById("filterValue");
+    selectValue.addEventListener("change", filterType);
+    
+    function filterType(){
 
+        //Creamos div contenedor del buscador y le asignamos una clase
+        const search=document.createElement("div");
+        search.className="search";
+    
+        //Declaramos parámetros del select??? AYUDA PARA ENTENDER!!!
+        let filterValue=selectValue.options[selectValue.selectedIndex].value;
+        let dataPokemon=window.filterByType(pokemonList,filterValue);
+
+        //Para volver a cero para cada seleccion??? AYUDA PARA ENTENDER!!!
+        document.getElementById("searchRoot").innerHTML="";
+    
+        //SEGUNDO FOR PARA RECORRER A LOS POKE
+        for(let i=0; i<dataPokemon.length; i++){     
+            
+            //CARTA PRINCIPAL espacio contenedor del pokemon filtrado 
+            const pokemonSpace=document.createElement("div");
+            pokemonSpace.className="pokemonSpace";
+            //pokemonSpace.id="pokemonSpace";
+
+            //Declaro espacios para imprimir según tipo, asignamos clases
+            //NOMBRE
+            let pokeName=document.createElement("h3");
+            pokeName.textContent=dataPokemon[i].name;
+            //FOTOS
+            let pokeImg=document.createElement("img");
+            pokeImg.src=dataPokemon[i].img;
+            //NUM
+            let pokeNum=document.createElement("h3");
+            pokeNum.textContent=dataPokemon[i].num;
+            //TIPO 1
+            let pokeType1=document.createElement("h1");
+            pokeType1.textContent=dataPokemon[i].type[0];
+            //TIPO 2
+            let poketype2=document.createElement("h1");
+            poketype2.textContent=dataPokemon[i].type[1];
+
+            pokemonSpace.appendChild(pokeName);
+            pokemonSpace.appendChild(pokeImg);
+            pokemonSpace.appendChild(pokeNum);
+            pokemonSpace.appendChild(pokeType1);
+            pokemonSpace.appendChild(poketype2);
+            search.appendChild(pokemonSpace);
+    
+        //Mostrar tarjeta en el contenedor especificado
+        document.getElementById("searchRoot").appendChild(search).innerHTML; 
+        };
+    };
+});//Fin botón búsqueda
