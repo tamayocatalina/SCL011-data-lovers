@@ -12,9 +12,10 @@
     <div class="container">
 
     <header>
+      <button id=start class="start"></button>
       <nav class="navigationMenu">
-          <button id="catalogueBtn" class="navBtn">Catálogo</button>
-          <button id="searchBtn" class="navBtn">Búsqueda</button>
+          <button id="catalogueBtn" class="navBtn">CATÁLOGO</button>
+          <button id="searchBtn" class="navBtn">BÚSQUEDA</button>
       </nav>
     </header>
 
@@ -23,6 +24,7 @@
         <div id="catalogueRoot"></div>
       </article>
       <article id="showSearch">
+        <div id="navigationSearch" class="navigationSearch">
           <select id= "filterValue" > 
             <option value="Fire">Fuego</option> 
             <option value="Ice">Hielo</option> 
@@ -40,7 +42,8 @@
             <option value="Normal">Normal</option>
             <option value="Dragon">Dragon</option> 
           </select>
-          <div id="searchRoot"></div>
+        </div>
+        <div id="searchRoot"></div>
       </article>
     </main>
 

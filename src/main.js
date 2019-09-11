@@ -2,7 +2,13 @@
 const pokemonList=window.POKEMON.pokemon;
 
 //Ocultamos select del filtrado
-document.getElementById("filterValue").style.display= "none";
+document.getElementById("navigationSearch").style.display= "none";
+
+const startPage=document.getElementById("start");
+
+startPage.addEventListener("click", ()=>{
+    window.location.reload();
+});
 
 //Declaramos botones de navegacion catálogo y búsqueda
 const catalogueOption=document.getElementById("catalogueBtn");
@@ -50,6 +56,9 @@ catalogueOption.addEventListener("click", ()=>{
             const modalSpace=document.createElement("div");
             modalSpace.className="modalSpace";
 
+            const characterItems=document.createElement("div");
+            characterItems.className="characterItems";
+
             let modalNameSpace=document.createElement("h4");
             modalNameSpace.className="modalStyle";
             modalNameSpace.textContent=(dataPokemon[i].name);
@@ -73,14 +82,19 @@ catalogueOption.addEventListener("click", ()=>{
             //Evento botón cerrar modal
             buttonSpace.addEventListener("click", ()=>{
                 modalSpace.style.display="none";
-                });
+            });
+
+            modalSpace.addEventListener("click",()=>{
+                modalSpace.style.display="none";
+            });
             
             //Asignamos padre a los elementos creados
-            modalSpace.appendChild(modalNameSpace);
-            modalSpace.appendChild(modalImgSpace);
-            modalSpace.appendChild(modalHeightSpace);
-            modalSpace.appendChild(modalWeightSpace);
-            modalSpace.appendChild(buttonSpace);
+            characterItems.appendChild(modalNameSpace);
+            characterItems.appendChild(modalImgSpace);
+            characterItems.appendChild(modalHeightSpace);
+            characterItems.appendChild(modalWeightSpace);
+            characterItems.appendChild(buttonSpace);
+            modalSpace.appendChild(characterItems);
             catalogueSpace.appendChild(modalSpace);
         });
 
@@ -102,7 +116,7 @@ catalogueSearch.addEventListener("click", ()=>{
     //Se muestra búsqueda y selectfiltergrande, se oculta catálogo
     document.getElementById("showCatalogue").style.display = "none";
     document.getElementById('showSearch').style.display = "block";
-    document.getElementById("filterValue").style.display= "block";
+    document.getElementById("navigationSearch").style.display= "block";
 
     //Se declara constante y función del select 
     const selectValue=document.getElementById("filterValue");

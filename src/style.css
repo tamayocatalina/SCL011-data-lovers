@@ -13,9 +13,32 @@ body{
     margin: 20px auto;
 }
 
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.start{
+    background: transparent;
+    background-image: url(../img/logo-1.png);
+    background-size: cover;
+    width: auto;
+    padding: 150px 250px;
+    background-position: center;
+    border: none;
+    margin: 10px;
+}
+
 .navigationMenu{
     width: 100%;
     text-align: center;
+    margin: 10px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .navBtn{
@@ -26,16 +49,18 @@ body{
     padding: 8px 15px;
     margin: 10px 25px;
     font-size: 16px;
+    justify-content: center;
+    font-weight: 300;
 }
 
 .navBtn:hover{
     background: transparent;
     color: #fefefe;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .catalogue, .search{
-    background: #fef4f4;
+    background: #fefefe;
     border-radius: 25px;
     margin: 30px 30px auto;
     padding: 20px 20px;
@@ -61,22 +86,22 @@ body{
     grid-template-rows: (4,1fr);
 }
 
-.catalogueSpace > .imgSpace{
+.imgSpace{
     grid-column: 1;
     grid-row: 1;
 }
 
-.catalogueSpace > .numSpace{
+.numSpace{
     grid-column: 1;
     grid-row: 2;
 }
 
-.catalogueSpace > .nameSpace{
+.nameSpace{
     grid-column: 1;
     grid-row: 3;
 }
 
-.catalogueSpace > .seeMoreStyle{
+.seeMoreStyle{
     color: #fefefe;
     background: #001623;
     border: 1px solid #001623;
@@ -100,7 +125,24 @@ body{
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #fefefe;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.characterItems{
+   background: #fefefe;
+   width: 20%;
+   height: 60%;
+   padding: 2%;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   border-radius: 15%;
 }
 
 .modalStyle{
@@ -120,6 +162,13 @@ body{
 .closeStyle:hover{
     background: #001623;
     color: #fefefe;
+}
+
+.navigationSearch {
+    background: #fefefe;
+    border-radius: 25px;
+    margin: 30px 30px auto;
+    padding: 20px 20px;
 }
 
 @media (max-width: 640px) {
