@@ -1,27 +1,16 @@
-/* Manejo de data */
-
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
-// const example = () => {
-//   return 'example';
-// };
-
-// window.example = example;
-
-const dataPokemon = window.POKEMON.pokemon;
+const dataPokemon=window.POKEMON.pokemon;
 window.dataPokemon=dataPokemon;
  
-const filterByType = (dataPokemon, valueFilter) => {
-
+const filterByType = (dataPokemon, filterValue) => {
+    
     const resultType = dataPokemon.filter(Element => {
-        return Element.type.includes(valueFilter);
-  });
+        return Element.type.includes(filterValue);
+    });
 
-  return resultType;
-    }
+    return resultType;
+};
 
-    window.filterByType = filterByType;
+window.filterByType=filterByType;
 
 
 //Hacer funcion filtrar por tipo con argumentos genericos 
