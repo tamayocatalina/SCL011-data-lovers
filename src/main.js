@@ -1,5 +1,6 @@
 //Declaramos constante POKEMON de la data
-const pokemonList=window.POKEMON.pokemon;
+//const dataPokemon=window.POKEMON.pokemon;
+const dataPokemon=window.POKEMON.pokemon;
 
 //Ocultamos select del filtrado
 document.getElementById("navigationSearch").style.display= "none";
@@ -140,13 +141,13 @@ catalogueSearch.addEventListener("click", ()=>{
     
         //Declaramos parámetros del select??? AYUDA PARA ENTENDER!!!
         let filterTypeValue=selectValue.options[selectValue.selectedIndex].value;
-        let dataPokemon=window.filterByType(pokemonList,filterTypeValue);
+        let pokemonList=window.filterByType(dataPokemon,filterTypeValue);
 
         //Para volver a cero para cada seleccion??? AYUDA PARA ENTENDER!!!
         document.getElementById("searchRoot").innerHTML="";
     
         //SEGUNDO FOR PARA RECORRER A LOS POKE
-        for(let i=0; i<dataPokemon.length; i++){     
+        for(let i=0; i<pokemonList.length; i++){     
             
             //CARTA PRINCIPAL espacio contenedor del pokemon filtrado 
             const pokemonSpace=document.createElement("div");
