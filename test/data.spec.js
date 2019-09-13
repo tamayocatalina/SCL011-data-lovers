@@ -4,9 +4,9 @@ require('../src/data');
 require('./data.spec.js');
 
 
-describe('filterType', () => {
+describe('filterByType()', () => {
 
-  const dataPokemon= 
+  const muestraPokemon= 
   [{
     "name": "Pikachu",
     "type": [
@@ -25,16 +25,16 @@ describe('filterType', () => {
   }];
 
   it('debería ser una función', () => {
-    assert.equal(typeof filterType, 'function');
+    assert.equal(typeof window.filterByType, 'function');
   });
 
   it('debería retornar "Pikachu" al filtrar por tipo Electrico', () => {
-    assert.deepEqual(window.filterType(dataPokemon, 'electric'),   
-    {
+    assert.deepEqual(window.filterByType(muestraPokemon, 'Electric'),   
+    [{
       "name": "Pikachu",
       "type": [
         "Electric"
       ]
-    })
-  })
+    }]);
+  });
 })
