@@ -5,7 +5,7 @@
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMRKQP26YdrvQcM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/pokemon-app-go-xT5LMRKQP26YdrvQcM"></a></p>
 
-<div style="width:100%;height:0;padding-bottom:60%;position:relative;"><iframe src="https://giphy.com/embed/3oEduV4SOS9mmmIOkw" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/cheezburger-pokemon-pikachu-3oEduV4SOS9mmmIOkw"></a></p>
+
 
 
 
@@ -72,9 +72,9 @@ HU3: " YO COMO jugador principiante de Pokémon GO! QUIERO saber las debilidades
 
 ## Desarrollo y desiciones de diseño
 Se realizó un estudio sobre distintos ámbitos para crear y diseñar una aplicación lo mas funcional, tanto de interfaz, contenidos y diseño posible.
-### Requerimientos de la app
 
 ### Planificación
+* Link Trello [https://trello.com/b/EhTUljO2/data-amante](https://trello.com/b/EhTUljO2/data-amante) 
 
 ### Estudio y análisis interfaz Pokemon GO 
 *Visualización app Pokémong GO*
@@ -114,23 +114,47 @@ Otras plataformas de visualización
 
 ### Wireframe 3 Alta fidelidad
 <a href="https://ibb.co/sKNKynn"><img src="https://i.ibb.co/X7K7S11/Pokemon-GO.png" alt="Pokemon-GO" border="0"></a>
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/vzmMsqR/iPhone-X.png" alt="iPhone-X" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'>imagen gif</a><br />
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/vzmMsqR/iPhone-X.png" alt="iPhone-X" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'>i</a><br />
 
-### Colores, diseño, tipografías, etc
+### Colores, diseño y tipografías.
+Tipografía: Oswald, obtenida de [Google Fonts]([https://fonts.google.com/specimen/Oswald?selection.family=Oswald](https://fonts.google.com/specimen/Oswald?selection.family=Oswald)
+
+<a href="https://ibb.co/Hp1twqv"><img src="https://i.ibb.co/k6k4bXn/paleta-y-tipo-09.jpg" alt="paleta-y-tipo-09" border="0"></a>
+ 
+
 
 ## Evaluación Heurística 
-
+<a href="https://ibb.co/JRsq4rw"><img src="https://i.ibb.co/Y7LXMfF/Captura-de-pantalla-2019-09-17-a-las-11-33-54-a-m.png" alt="Captura-de-pantalla-2019-09-17-a-las-11-33-54-a-m" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'></a><br />
+<a href="https://ibb.co/7bgFnpK"><img src="https://i.ibb.co/JCxPvpH/Captura-de-pantalla-2019-09-17-a-las-11-34-00-a-m.png" alt="Captura-de-pantalla-2019-09-17-a-las-11-34-00-a-m" border="0"></a>
+<a href="https://ibb.co/6D69cbZ"><img src="https://i.ibb.co/c2zfKtv/Captura-de-pantalla-2019-09-17-a-las-11-34-16-a-m.png" alt="Captura-de-pantalla-2019-09-17-a-las-11-34-16-a-m" border="0"></a>
 ## Forma de uso e interfaz de usuario
 
 ### Explicación
-### Prototipo celular, computador y tablet 
-### Zeplin
+
 ### Testeos usabilidad
 
+Se realizó el primer testeo de usabilidad a Matías, un jugador principiante de Pokémon GO!, de 25 años.
+[Video testeo](https://youtu.be/Dj2EGOBYKS0)
+
 **Objetivos del testeo**
+Observar como el usuario reacciona al catálogo Pokemon GO + *kanto edition* 
+**Guión**
+ - 1. Bienvenida
+ - 2. Explicación
+ - 3. ¿Cómo visualizarías un pokémon?
+ - 4. ¿Cómo sabrías el peso y altura de un pokémon?
+ - 5. ¿Búsqueda pokémon por tipo 1?
+ - 6. ¿Búsqueda pokémon por tipo 2?
+ - 7. Volver al home
+
+**Resultados testeo**
+- 1. El usuario tiene problemas para deslizarse por la app debido a que no sabe como usar el moussepad de Mac.
+- 2. No supo como volver a la página de inicio, ahi debió haber hecho click en el logo principal de la app.
 
 
-## Conclusiones
-### cambios para  próximos prototipos 
+**Futuras mejoras**
+- 1. Hacer que el  logo principal se entienda que es un botón.
 
 
+
+<div style="width:100%;height:0;padding-bottom:60%;position:relative;"><iframe src="https://giphy.com/embed/3oEduV4SOS9mmmIOkw" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/cheezburger-pokemon-pikachu-3oEduV4SOS9mmmIOkw"></a></p>
