@@ -1,5 +1,6 @@
 //Declaramos constante POKEMON de la data
-const pokemonList=window.POKEMON.pokemon;
+//const dataPokemon=window.POKEMON.pokemon;
+const dataPokemon=window.POKEMON.pokemon;
 
 //Ocultamos select del filtrado
 document.getElementById("navigationSearch").style.display= "none";
@@ -60,20 +61,28 @@ catalogueOption.addEventListener("click", ()=>{
             characterItems.className="characterItems";
 
             let modalNameSpace=document.createElement("h4");
-            modalNameSpace.className="modalStyle";
+            modalNameSpace.className="characterNameStyle";
             modalNameSpace.textContent=(dataPokemon[i].name);
             
             let modalImgSpace=document.createElement("img");
-            modalImgSpace.className="modalStyle";
+            modalImgSpace.className="characterImgStyle";
             modalImgSpace.src=(dataPokemon[i].img);
 
             let modalHeightSpace=document.createElement("p");
-            modalHeightSpace.className="modalStyle";
-            modalHeightSpace.textContent=(dataPokemon[i].height);
+            modalHeightSpace.className="characterHeightStyle";
+            modalHeightSpace.textContent=("Altura " +(dataPokemon[i].height));
 
             let modalWeightSpace=document.createElement("p");
-            modalWeightSpace.className="modalStyle";
-            modalWeightSpace.textContent=(dataPokemon[i].weight);
+            modalWeightSpace.className="characterWeightStyle";
+            modalWeightSpace.textContent=("Peso " +(dataPokemon[i].weight));
+
+            let modalCandyCountSpace=document.createElement("p");
+            modalCandyCountSpace.className="characterCandyCountStyle";
+            modalCandyCountSpace.textContent=("Contador de caramelos "+(dataPokemon[i].candy_count));
+
+            let modalEggSpace=document.createElement("p");
+            modalEggSpace.className="characterEggStyle";
+            modalEggSpace.textContent=("Huevos " +(dataPokemon[i].egg));
 
             const buttonSpace=document.createElement("span");
             buttonSpace.className="closeStyle";
@@ -93,6 +102,8 @@ catalogueOption.addEventListener("click", ()=>{
             characterItems.appendChild(modalImgSpace);
             characterItems.appendChild(modalHeightSpace);
             characterItems.appendChild(modalWeightSpace);
+            characterItems.appendChild(modalCandyCountSpace);
+            characterItems.appendChild(modalEggSpace);
             characterItems.appendChild(buttonSpace);
             modalSpace.appendChild(characterItems);
             catalogueSpace.appendChild(modalSpace);
@@ -119,7 +130,7 @@ catalogueSearch.addEventListener("click", ()=>{
     document.getElementById("navigationSearch").style.display= "block";
 
     //Se declara constante y función del select 
-    const selectValue=document.getElementById("filterValue");
+    const selectValue=document.getElementById("filterTypeValue");
     selectValue.addEventListener("change", filterType);
     
     function filterType(){
@@ -129,14 +140,14 @@ catalogueSearch.addEventListener("click", ()=>{
         search.className="search";
     
         //Declaramos parámetros del select??? AYUDA PARA ENTENDER!!!
-        let filterValue=selectValue.options[selectValue.selectedIndex].value;
-        let dataPokemon=window.filterByType(pokemonList,filterValue);
+        let filterTypeValue=selectValue.options[selectValue.selectedIndex].value;
+        let pokemonList=window.filterByType(dataPokemon,filterTypeValue);
 
         //Para volver a cero para cada seleccion??? AYUDA PARA ENTENDER!!!
         document.getElementById("searchRoot").innerHTML="";
     
         //SEGUNDO FOR PARA RECORRER A LOS POKE
-        for(let i=0; i<dataPokemon.length; i++){     
+        for(let i=0; i<pokemonList.length; i++){     
             
             //CARTA PRINCIPAL espacio contenedor del pokemon filtrado 
             const pokemonSpace=document.createElement("div");
@@ -145,7 +156,7 @@ catalogueSearch.addEventListener("click", ()=>{
 
             //Declaro espacios para imprimir según tipo, asignamos clases
             //NOMBRE
-            let pokeName=document.createElement("h3");
+            let pokeName=document.createElement("h1");
             pokeName.textContent=dataPokemon[i].name;
             //FOTOS
             let pokeImg=document.createElement("img");
@@ -154,15 +165,15 @@ catalogueSearch.addEventListener("click", ()=>{
             let pokeNum=document.createElement("h3");
             pokeNum.textContent=dataPokemon[i].num;
             //TIPO 1
-            let pokeType1=document.createElement("h1");
+            let pokeType1=document.createElement("h2");
             pokeType1.textContent=dataPokemon[i].type[0];
             //TIPO 2
-            let poketype2=document.createElement("h1");
+            let poketype2=document.createElement("h2");
             poketype2.textContent=dataPokemon[i].type[1];
 
+            pokemonSpace.appendChild(pokeNum);
             pokemonSpace.appendChild(pokeName);
             pokemonSpace.appendChild(pokeImg);
-            pokemonSpace.appendChild(pokeNum);
             pokemonSpace.appendChild(pokeType1);
             pokemonSpace.appendChild(poketype2);
             search.appendChild(pokemonSpace);
