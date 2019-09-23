@@ -166,9 +166,18 @@ catalogueSearch.addEventListener("click", ()=>{
             pokemonSpace.appendChild(pokeType1);
             pokemonSpace.appendChild(poketype2);
             search.appendChild(pokemonSpace);
+
+            let pokeCalculation = filterByType.length;
+            let allPoke = dataPokemon.lenght;
+            let pokePercent = (pokeCalculation/allPoke)*100;
+            let pokePercentTwo = pokePercent.toFixed(2);
+
+            const theCalculation = document.getElementById("calculation");
+            theCalculation.innerHTML = "¿Sabías qué en la región de Kanto existen " + pokePercentTwo + " % pokes de tipo " + filterValue + " ?" ;
     
         //Mostrar tarjeta en el contenedor especificado
         document.getElementById("searchRoot").appendChild(search).innerHTML; 
         };
     };
 });//Fin botón búsqueda
+
