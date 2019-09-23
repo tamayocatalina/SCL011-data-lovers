@@ -41,7 +41,7 @@ header{
 .navigationMenu{
     width: 100%;
     text-align: center;
-    margin: 20px;    
+    margin: 10px;    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +57,7 @@ header{
     margin: 10px 25px;
     font-size: 16px;
     justify-content: center;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .navBtn:hover{
@@ -149,48 +149,13 @@ header{
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   display: grid;
-   grid-template-columns: (2,2fr);
-   grid-template-rows: (3,2fr);
    border-radius: 15%;
-   border: 1px solid #001623;
-   color: #001623;
-   font-size: 18px;
-   font-weight: 300;
 }
 
-.characterNameStyle{
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.characterImgStyle{
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.characterHeightStyle{
-    grid-column: 1;
-    grid-row: 2;
-    font-size: 14px;
-}
-
-.characterWeightStyle{
-    grid-column: 2;
-    grid-row: 2;
-    font-size: 14px;
-}
-
-.characterCandyCountStyle{
-    grid-column: 1;
-    grid-row: 3;
-    font-size: 14px;
-}
-
-.characterEggStyle{
-    grid-column: 2;
-    grid-row: 3;
-    font-size: 14px;
+.modalStyle{
+    color: #001623;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .closeStyle{
@@ -198,8 +163,7 @@ header{
     background: transparent;
     border: 2px solid #001623;
     border-radius: 28px;
-    padding: 2px 15px;    
-    text-align: center;
+    padding: 2px 15px;
 }
 
 .closeStyle:hover{
@@ -210,19 +174,8 @@ header{
 .navigationSearch {
     background: #fefefe;
     border-radius: 25px;
+    margin: 30px 30px auto;
     padding: 20px 20px;
-    margin-left: 250px;
-    margin-right: 250px;
-    display: flex;
-    align-items: center;
-}
-
-.filterTypeValue{
-    background: #001623;
-    color: #fefefe;
-    border: none;
-    border-radius: 15px;
-    padding: 5px;
 }
 
 @media (max-width: 640px) {
