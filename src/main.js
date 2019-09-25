@@ -175,7 +175,7 @@ catalogueSearch.addEventListener("click", ()=>{
 
             const theCalculation = document.getElementById("calculation");
             theCalculation.innerHTML = "¿Sabías qué en la región de Kanto el " + pokePercentTwo + " % de los pokemones son de tipo " + filterValue + " ?" ;
-    
+    //holaohla
         //Mostrar tarjeta en el contenedor especificado
         document.getElementById("searchRoot").appendChild(search).innerHTML; 
         };
