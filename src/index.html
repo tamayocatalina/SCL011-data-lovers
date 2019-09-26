@@ -16,6 +16,7 @@
       <nav class="navigationMenu">
           <button id="catalogueBtn" class="navBtn">CATÁLOGO</button>
           <button id="searchBtn" class="navBtn">BÚSQUEDA</button>
+          <button id="weaknessBtn" class="navBtn">DEBILIDAD</button>
       </nav>
     </header>
 
@@ -23,6 +24,8 @@
       <article id="showCatalogue">
         <div id="catalogueRoot"></div>
       </article>
+
+
       <article id="showSearch">
         <div id="navigationSearch" class="navigationSearch">
           <select id= "filterValue" > 
@@ -43,16 +46,38 @@
             <option value="Dragon">Dragon</option> 
           </select>
         </div>
-
         <div id = "calculation" class = "calculation"> </div>
-
-    <div id="root"></div>
-
-
-
+      <div id="root"></div>
         <div id="searchRoot"></div>
-
       </article>
+
+
+        <article id="showWeakness">
+          <div id="navigationWeakness" class="navigationWeakness"></div>
+            <select id= "filterWeakness" > 
+              <option value="Ice">Hielo</option> 
+              <option value="Fire">Fuego</option> 
+              <option value="Flying">Volador</option> 
+              <option value="Psychic">Psíquico</option> 
+              <option value="Water">Agua</option> 
+              <option value="Ground">Tierra</option> 
+              <option value="Rock">Roca</option> 
+              <option value="Grass">Planta</option> 
+              <option value="Fighting">Lucha</option> 
+              <option value="Poison">Veneno</option> 
+              <option value="Bug">Bicho</option> 
+              <option value="Electric">Electrico</option>
+              <option value="Ghost">Fantasma</option> 
+              <option value="Normal">Normal</option>
+              <option value="Dragon">Dragon</option> 
+            </select>
+          </div>
+        <!---div calculo-->
+        <div id="root"></div>
+        <div id="searchRootTwo"></div>
+      </article>
+
+     
     </main>
 
     </div>
