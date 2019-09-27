@@ -223,7 +223,7 @@ selectValueWeakness.addEventListener("change", filterTypeWeakness);
     
     // CARTA PRINCIPAL CONTENEDORA
     const pokeSpaceTwo = document.createElement("div");
-    pokeSpaceTwo.className = "pokeSpaceTwo";
+    pokeSpaceTwo.className = "pokemonSpace";
     //NOMBRE 
     let pokeNameWeak = document.createElement("h3");
     pokeNameWeak.textContent = dataPokemon[i].name;
@@ -256,3 +256,53 @@ selectValueWeakness.addEventListener("change", filterTypeWeakness);
 };
 }
 );
+
+
+const searchThree = document.createElement("div");
+    searchThree.className = "searchThree";
+
+function globalCards (){
+
+
+    //ESPACIO PRINCIPAL CONTENEDOR 2
+    const searchThree = document.createElement("div");
+    searchThree.className = "searchThree";
+
+    // CARTA PRINCIPAL CONTENEDORA 2
+    const pokeSpaceTwo = document.createElement("div");
+    pokeSpaceTwo.className = "pokemonSpace";
+    //NOMBRE 2
+    let pokeNameWeak = document.createElement("h3");
+    pokeNameWeak.textContent = dataPokemon[i].name;
+
+    //FOTOS DEBILIDAD 2
+    let pokeImgWeak = document.createElement("img");
+    pokeImgWeak.src = dataPokemon[i].img;
+
+    //NUMERO DEBILIDAD2
+    let pokeNumWeak = document.createElement("h3");
+    pokeNumWeak.textContent = dataPokemon[i].num;
+
+    //TIPO 2.1
+    let pokeType1=document.createElement("h1");
+    pokeType1.textContent=dataPokemon[i].type[0];
+
+    //TIPO 2.2
+    let poketype2=document.createElement("h1");
+    poketype2.textContent=dataPokemon[i].type[1];
+
+    //DEBILIDAD 2
+    let pokeWeakness = document.createElement("h3");
+    pokeWeakness.textContent = dataPokemon[i].weaknesses;
+
+    //HEIGHT ALTURA
+    let pokeHeight = document.createElement("h3");
+    pokeHeight.textContent = dataPokemon[i].height;
+
+    //WEIGHT PESO
+    let pokeWeight = document.createElement("h3");
+    pokeWeight.textContent = dataPokemon[i].weight;
+
+    
+
+}
