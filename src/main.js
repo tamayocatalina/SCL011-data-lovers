@@ -15,6 +15,64 @@ const catalogueOption=document.getElementById("catalogueBtn");
 const catalogueSearch=document.getElementById("searchBtn");
 const catalogueWeakness=document.getElementById("weaknessBtn");
 
+
+function globalCards (globalData){
+
+    for(let i=0; i<globalData.length; i++){
+
+    //ESPACIO PRINCIPAL CONTENEDOR 2
+    const searchThree = document.createElement("div");
+    searchThree.className = "searchThree";
+
+    // CARTA PRINCIPAL CONTENEDORA 2
+    const pokeSpace = document.createElement("div");
+    pokeSpace.className = "pokemonSpace";
+    //NOMBRE 2
+    let pokeName = document.createElement("h3");
+    pokeName.textContent = globalData[i].name;
+
+    //FOTOS DEBILIDAD 2
+    let pokeImg = document.createElement("img");
+    pokeImg.src = globalData[i].img;
+
+    //NUMERO DEBILIDAD2
+    let pokeNum = document.createElement("h3");
+    pokeNum.textContent = globalData[i].num;
+
+    //TIPO 2.1
+    let pokeType1=document.createElement("h1");
+    pokeType1.textContent=globalData[i].type[0];
+
+    //TIPO 2.2
+    let poketype2=document.createElement("h1");
+    poketype2.textContent=globalData[i].type[1];
+
+    //DEBILIDAD 2
+    let pokeweaknesses = document.createElement("h3");
+    pokeweaknesses.textContent = globalData[i].weaknesses;
+
+    //HEIGHT ALTURA
+    let pokeHeight = document.createElement("h3");
+    pokeHeight.textContent = globalData[i].height;
+
+    //WEIGHT PESO
+    let pokeWeight = document.createElement("h3");
+    pokeWeight.textContent = globalData[i].weight;
+
+    pokeSpace.appendChild(pokeName);
+    pokeSpace.appendChild(pokeImg);
+    pokeSpace.appendChild(pokeNum);
+    pokeSpace.appendChild(pokeType1);
+    pokeSpace.appendChild(poketype2);
+    pokeSpace.appendChild(pokeweaknesses);
+    pokeSpace.appendChild(pokeHeight);
+    pokeSpace.appendChild(pokeWeight);
+    searchThree.appendChild(pokeSpace);
+
+    document.getElementById("catalogueRoot").appendChild(searchThree).innerHTML
+
+}
+}
 //Evento botón catálogo MOSTRAR
 catalogueOption.addEventListener("click", ()=>{
     
@@ -26,90 +84,90 @@ catalogueOption.addEventListener("click", ()=>{
     document.getElementById("showCatalogue").style.display = 'block';
     document.getElementById("showSearch").style.display = "none";
     document.getElementById("showWeakness").style.display = "none";
-
+    globalCards(pokemonList);
     //Se recorre la data
-    for (let i=0; i<dataPokemon.length;i++){
+    // for (let i=0; i<dataPokemon.length;i++){
 
-        //Declaro espacios para imprimir ficha y características, asignamos clases
-        const catalogueSpace=document.createElement("div");
-        catalogueSpace.className="catalogueSpace";
-        //catalogueSpace.id="vercatalogo";
+    //     //Declaro espacios para imprimir ficha y características, asignamos clases
+    //     const catalogueSpace=document.createElement("div");
+    //     catalogueSpace.className="catalogueSpace";
+    //     //catalogueSpace.id="vercatalogo";
 
-        let numSpace=document.createElement("h3");
-        numSpace.className="numSpace";
-        numSpace.textContent=(dataPokemon[i].num);
+    //     let numSpace=document.createElement("h3");
+    //     numSpace.className="numSpace";
+    //     numSpace.textContent=(dataPokemon[i].num);
         
-        let nameSpace=document.createElement("h4");
-        nameSpace.className="nameSpace";
-        nameSpace.textContent=(dataPokemon[i].name);
+    //     let nameSpace=document.createElement("h4");
+    //     nameSpace.className="nameSpace";
+    //     nameSpace.textContent=(dataPokemon[i].name);
 
-        let imgSpace=document.createElement("img");
-        imgSpace.className="imgSpace";
-        imgSpace.src=(dataPokemon[i].img);
+    //     let imgSpace=document.createElement("img");
+    //     imgSpace.className="imgSpace";
+    //     imgSpace.src=(dataPokemon[i].img);
         
-        //Declaramos botón del modal
-        const modalBtn=document.createElement("button");
-        modalBtn.className="seeMoreStyle";
-        modalBtn.textContent=("Ver +");
+    //     //Declaramos botón del modal
+    //     const modalBtn=document.createElement("button");
+    //     modalBtn.className="seeMoreStyle";
+    //     modalBtn.textContent=("Ver +");
         
-        //Evento botón del modal
-        modalBtn.addEventListener("click", ()=>{
+    //     //Evento botón del modal
+    //     modalBtn.addEventListener("click", ()=>{
 
-            const modalSpace=document.createElement("div");
-            modalSpace.className="modalSpace";
+    //         const modalSpace=document.createElement("div");
+    //         modalSpace.className="modalSpace";
 
-            const characterItems=document.createElement("div");
-            characterItems.className="characterItems";
+    //         const characterItems=document.createElement("div");
+    //         characterItems.className="characterItems";
 
-            let modalNameSpace=document.createElement("h4");
-            modalNameSpace.className="modalStyle";
-            modalNameSpace.textContent=(dataPokemon[i].name);
+    //         let modalNameSpace=document.createElement("h4");
+    //         modalNameSpace.className="modalStyle";
+    //         modalNameSpace.textContent=(dataPokemon[i].name);
             
-            let modalImgSpace=document.createElement("img");
-            modalImgSpace.className="modalStyle";
-            modalImgSpace.src=(dataPokemon[i].img);
+    //         let modalImgSpace=document.createElement("img");
+    //         modalImgSpace.className="modalStyle";
+    //         modalImgSpace.src=(dataPokemon[i].img);
 
-            let modalHeightSpace=document.createElement("p");
-            modalHeightSpace.className="modalStyle";
-            modalHeightSpace.textContent=(dataPokemon[i].height);
+    //         let modalHeightSpace=document.createElement("p");
+    //         modalHeightSpace.className="modalStyle";
+    //         modalHeightSpace.textContent=(dataPokemon[i].height);
 
-            let modalWeightSpace=document.createElement("p");
-            modalWeightSpace.className="modalStyle";
-            modalWeightSpace.textContent=(dataPokemon[i].weight);
+    //         let modalWeightSpace=document.createElement("p");
+    //         modalWeightSpace.className="modalStyle";
+    //         modalWeightSpace.textContent=(dataPokemon[i].weight);
 
-            const buttonSpace=document.createElement("span");
-            buttonSpace.className="closeStyle";
-            buttonSpace.textContent=("X");
+    //         const buttonSpace=document.createElement("span");
+    //         buttonSpace.className="closeStyle";
+    //         buttonSpace.textContent=("X");
 
-            //Evento botón cerrar modal
-            buttonSpace.addEventListener("click", ()=>{
-                modalSpace.style.display="none";
-            });
+    //         //Evento botón cerrar modal
+    //         buttonSpace.addEventListener("click", ()=>{
+    //             modalSpace.style.display="none";
+    //         });
 
-            modalSpace.addEventListener("click",()=>{
-                modalSpace.style.display="none";
-            });
+    //         modalSpace.addEventListener("click",()=>{
+    //             modalSpace.style.display="none";
+    //         });
             
-            //Asignamos padre a los elementos creados
-            characterItems.appendChild(modalNameSpace);
-            characterItems.appendChild(modalImgSpace);
-            characterItems.appendChild(modalHeightSpace);
-            characterItems.appendChild(modalWeightSpace);
-            characterItems.appendChild(buttonSpace);
-            modalSpace.appendChild(characterItems);
-            catalogueSpace.appendChild(modalSpace);
-        });
+    //         //Asignamos padre a los elementos creados
+    //         characterItems.appendChild(modalNameSpace);
+    //         characterItems.appendChild(modalImgSpace);
+    //         characterItems.appendChild(modalHeightSpace);
+    //         characterItems.appendChild(modalWeightSpace);
+    //         characterItems.appendChild(buttonSpace);
+    //         modalSpace.appendChild(characterItems);
+    //         catalogueSpace.appendChild(modalSpace);
+    //     });
 
-        //Asignamos padre a los elementos creados
-        catalogueSpace.appendChild(imgSpace);
-        catalogueSpace.appendChild(numSpace);
-        catalogueSpace.appendChild(nameSpace);
-        catalogueSpace.appendChild(modalBtn);
-        catalogue.appendChild(catalogueSpace);
+    //     //Asignamos padre a los elementos creados
+    //     catalogueSpace.appendChild(imgSpace);
+    //     catalogueSpace.appendChild(numSpace);
+    //     catalogueSpace.appendChild(nameSpace);
+    //     catalogueSpace.appendChild(modalBtn);
+    //     catalogue.appendChild(catalogueSpace);
 
-        //Imprimimos el abuelo en la raiz
-        document.getElementById("catalogueRoot").appendChild(catalogue).innerHTML;
-    }
+    //     //Imprimimos el abuelo en la raiz
+    //     document.getElementById("catalogueRoot").appendChild(catalogue).innerHTML;
+    // }
 });//Fin botón catálogo
 
 //Evento botón búsqueda FILTRAR
@@ -258,51 +316,5 @@ selectValueWeakness.addEventListener("change", filterTypeWeakness);
 );
 
 
-const searchThree = document.createElement("div");
-    searchThree.className = "searchThree";
-
-function globalCards (){
-
-
-    //ESPACIO PRINCIPAL CONTENEDOR 2
-    const searchThree = document.createElement("div");
-    searchThree.className = "searchThree";
-
-    // CARTA PRINCIPAL CONTENEDORA 2
-    const pokeSpaceTwo = document.createElement("div");
-    pokeSpaceTwo.className = "pokemonSpace";
-    //NOMBRE 2
-    let pokeNameWeak = document.createElement("h3");
-    pokeNameWeak.textContent = dataPokemon[i].name;
-
-    //FOTOS DEBILIDAD 2
-    let pokeImgWeak = document.createElement("img");
-    pokeImgWeak.src = dataPokemon[i].img;
-
-    //NUMERO DEBILIDAD2
-    let pokeNumWeak = document.createElement("h3");
-    pokeNumWeak.textContent = dataPokemon[i].num;
-
-    //TIPO 2.1
-    let pokeType1=document.createElement("h1");
-    pokeType1.textContent=dataPokemon[i].type[0];
-
-    //TIPO 2.2
-    let poketype2=document.createElement("h1");
-    poketype2.textContent=dataPokemon[i].type[1];
-
-    //DEBILIDAD 2
-    let pokeWeakness = document.createElement("h3");
-    pokeWeakness.textContent = dataPokemon[i].weaknesses;
-
-    //HEIGHT ALTURA
-    let pokeHeight = document.createElement("h3");
-    pokeHeight.textContent = dataPokemon[i].height;
-
-    //WEIGHT PESO
-    let pokeWeight = document.createElement("h3");
-    pokeWeight.textContent = dataPokemon[i].weight;
-
-    
-
-}
+// const searchThree = document.createElement("div");
+//     searchThree.className = "searchThree";
