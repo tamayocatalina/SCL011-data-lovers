@@ -17,7 +17,7 @@ window.filterByType=filterByType;
 const filterByWeakness = (dataPokemon, filterValueWeakness) => {
 
     const resultTypeWeakness = dataPokemon.filter(Element => {
-        return Element.type.includes(filterValueWeakness);
+        return Element.weaknesses.includes(filterValueWeakness);
 
     })
     return resultTypeWeakness;

@@ -17,6 +17,7 @@ const catalogueWeakness=document.getElementById("weaknessBtn");
 
 
 function globalCards (globalData){
+    document.getElementById("catalogueRoot").innerHTML="";
 
     for(let i=0; i<globalData.length; i++){
 
@@ -173,12 +174,14 @@ catalogueOption.addEventListener("click", ()=>{
 //Evento botón búsqueda FILTRAR
 catalogueSearch.addEventListener("click", ()=>{
 
+    document.getElementById("catalogueRoot").innerHTML="";
+
     //Se muestra búsqueda y selectfiltergrande, se oculta catálogo ..Y DEBILIDAD
-    document.getElementById("showCatalogue").style.display = "none";
-    document.getElementById('showSearch').style.display = "block";
-    document.getElementById("navigationSearch").style.display= "block";
-    document.getElementById("showWeakness").style.display = "none";
-    document.getElementById("navigationWeakness").style.display ="none";
+    // document.getElementById("showCatalogue").style.display = "none";
+     document.getElementById('showSearch').style.display = "block";
+     document.getElementById("navigationSearch").style.display= "block";
+    // document.getElementById("showWeakness").style.display = "none";
+    // document.getElementById("navigationWeakness").style.display ="none";
 
     //Se declara constante y función del select 
     const selectValue=document.getElementById("filterValue");
@@ -195,61 +198,19 @@ catalogueSearch.addEventListener("click", ()=>{
         let dataPokemon=window.filterByType(pokemonList,filterValue);
 
         //Para volver a cero para cada seleccion
-        document.getElementById("searchRoot").innerHTML="";
-    
-        //SEGUNDO FOR PARA RECORRER A LOS POKE
-        for(let i=0; i<dataPokemon.length; i++){     
-            
-            //CARTA PRINCIPAL espacio contenedor del pokemon filtrado 
-            const pokemonSpace=document.createElement("div");
-            pokemonSpace.className="pokemonSpace";
-            //pokemonSpace.id="pokemonSpace";
-
-            //Declaro espacios para imprimir según tipo, asignamos clases
-            //NOMBRE
-            let pokeName=document.createElement("h3");
-            pokeName.textContent=dataPokemon[i].name;
-            //FOTOS
-            let pokeImg=document.createElement("img");
-            pokeImg.src=dataPokemon[i].img;
-            //NUM
-            let pokeNum=document.createElement("h3");
-            pokeNum.textContent=dataPokemon[i].num;
-            //TIPO 1
-            let pokeType1=document.createElement("h1");
-            pokeType1.textContent=dataPokemon[i].type[0];
-            //TIPO 2
-            let poketype2=document.createElement("h1");
-            poketype2.textContent=dataPokemon[i].type[1];
-
-            pokemonSpace.appendChild(pokeName);
-            pokemonSpace.appendChild(pokeImg);
-            pokemonSpace.appendChild(pokeNum);
-            pokemonSpace.appendChild(pokeType1);
-            pokemonSpace.appendChild(poketype2);
-            search.appendChild(pokemonSpace);
-            
-            // Calculo 
-            
-            let pokeCalculation = parseInt(filterValue.length);
-            let pokePercent = (pokeCalculation/151)*100;
-            let pokePercentTwo = (pokePercent.toFixed(2));
-
-            const theCalculation = document.getElementById("calculation");
-            theCalculation.innerHTML = "¿Sabías qué en la región de Kanto el " + pokePercentTwo + " % de los pokemones son de tipo " + filterValue + " ?" ;
-   
-        //Mostrar tarjeta en el contenedor especificado
-        document.getElementById("searchRoot").appendChild(search).innerHTML; 
-            };     
-        };
+        //document.getElementById("searchRoot").innerHTML="";
+        console.log(dataPokemon);
+        globalCards(dataPokemon);
+  
+      
     }
-);//Fin botón búsqueda
+});//Fin botón búsqueda
 
 //EVENTO BOTON BUSQUEDA DEBILIDAD
 catalogueWeakness.addEventListener("click", ()=>{
 
 // SE MUESTRA FILTRO DEBILIDAD Y SE BLOQUEA EL RESTO 
-    document.getElementById("showCatalogue").style.display ="none";
+   
     document.getElementById("showSearch").style.display = "none";
     document.getElementById("navigationSearch").style.display = "none";
     document.getElementById("showWeakness").style.display = "block";
@@ -263,57 +224,14 @@ selectValueWeakness.addEventListener("change", filterTypeWeakness);
 
  function filterTypeWeakness(){
 
-    // DIV CONTENEDOR DEL BUSCADOR DEBILIDAD CON CLASE
-    const searchTwo = document.createElement("div");
-    searchTwo.className = "searchTwo";
-
     // PARAMETROS SELCT filterWeakness(html)
     let filterValueWeakness = selectValueWeakness.options[selectValueWeakness.selectedIndex].value;
     let dataPokemon = window.filterByWeakness(pokemonList,filterValueWeakness);
-
-    // RETORNANDO VALOR INCIAL (tarjetas dentro de:)
-    document.getElementById("searchRootTwo").innerHTML = "";
-
-    // FOR PARA RECORRER LAS DEBILIDADES
-    for(let i=0; i<dataPokemon.length; i++){ 
-
-    // CREANDO LAS CARTAS DE DEBILIDAD 
-    
-    // CARTA PRINCIPAL CONTENEDORA
-    const pokeSpaceTwo = document.createElement("div");
-    pokeSpaceTwo.className = "pokemonSpace";
-    //NOMBRE 
-    let pokeNameWeak = document.createElement("h3");
-    pokeNameWeak.textContent = dataPokemon[i].name;
-
-    //FOTOS DEBILIDAD 
-    let pokeImgWeak = document.createElement("img");
-    pokeImgWeak.src = dataPokemon[i].img;
-
-    //NUMERO DEBILIDAD
-    let pokeNumWeak = document.createElement("h3");
-    pokeNumWeak.textContent = dataPokemon[i].num;
-
-    //DEBILIDAD
-    let pokeWeakness = document.createElement("h3");
-    pokeWeakness.textContent = dataPokemon[i].weaknesses;
-
-
-
-    pokeSpaceTwo.appendChild(pokeNameWeak);
-    pokeSpaceTwo.appendChild(pokeImgWeak);
-    pokeSpaceTwo.appendChild(pokeNumWeak);
-    pokeSpaceTwo.appendChild(pokeWeakness);
-    searchTwo.appendChild(pokeSpaceTwo);
-
-//MOSTRAR DEBILIDADES EN SU CONTENEDOR
- document.getElementById("searchRootTwo").appendChild(searchTwo).innerHTML;
+console.log(dataPokemon);
+   globalCards(dataPokemon);
  
-
-};     
-};
 }
-);
+});
 
 
 // const searchThree = document.createElement("div");
