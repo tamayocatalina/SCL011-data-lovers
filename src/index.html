@@ -17,12 +17,11 @@
           <button id="catalogueBtn" class="navBtn">CATÁLOGO</button>
           <button id="searchBtn" class="navBtn">BÚSQUEDA</button>
           <button id="weaknessBtn" class="navBtn">DEBILIDAD</button>
+          <button id="orderBtn" class="navBtn">ORDENAR</button>
       </nav>
     </header>
 
     <main>
-      
-
 
       <article id="showSearch">
         <div id="navigationSearch" class="navigationSearch">
@@ -51,7 +50,7 @@
 
 
         <article id="showWeakness">
-          <div id="navigationWeakness" class="navigationWeakness"></div>
+          <div id="navigationWeakness" class="navigationSearch">
             <select id= "filterWeakness" > 
               <option value="Ice">Hielo</option> 
               <option value="Fire">Fuego</option> 
@@ -70,10 +69,22 @@
               <option value="Dragon">Dragon</option> 
             </select>
           </div>
-        <!---div calculo-->
-          <!--- <div id="root"></div> -->
         <div id="searchRootTwo"></div>
         </article>
+
+       <article id="showOrder">
+         <div id="navigationOrder" class="navigationSearch"> 
+           <select id="filterOrder">
+             <option value="orderAbc">A-Z</option>
+             <option value="orderZyx">Z-A</option>
+             <option value="order123">1-151</option>
+             <option value="order321">151-1</option>
+           </select>
+           <div id=catalogueOrder></div>
+         </div>
+  
+
+       </article>
 
 
         <article id="showCatalogue">
